@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#Baptiste</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>#Baptiste</h1>
+    <p>Voici les derniers tweets</p>
+
+    <% tweets.forEach(function (tweet, index) { %>
+    <blockquote class="twitter-tweet" lang="fr">
+        <a href="https://twitter.com/hashtagbaptiste/status/<%= tweet.id %>"></a>
+    </blockquote>
+    <blockquote class="twitter-tweet" lang="fr">
+        <p>
+            <%= tweet.message %>
+        </p>
+        &mdash; # Baptiste (@hashtagbaptiste)
+        <a href="https://twitter.com/hashtagbaptiste/status/<%= tweet.newId %>">
+            Afficher sur Twitter
+        </a>
+    </blockquote>
+    <hr/>
+    <% }); %>
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
